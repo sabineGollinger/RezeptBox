@@ -1,6 +1,6 @@
-#RezeptBox
+# RezeptBox
 
-##Team 
+## Team 
 Michael Schrempf
 Michaela Stangl
 Kevin Stessel
