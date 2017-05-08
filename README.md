@@ -1,8 +1,8 @@
 # RezeptBox
 
 ## Team 
-Michael Schrempf
-Michaela Stangl
-Kevin Stessel
+Michael Schrempf \n
+Michaela Stangl \n
+Kevin Stessel \n
 Sabine Gollinger
 
