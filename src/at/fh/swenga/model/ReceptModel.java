@@ -1,4 +1,4 @@
-package at.fh.swenga;
+package at.fh.swenga.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,9 +39,8 @@ public class ReceptModel implements java.io.Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ReceptModel(int id, String name, String beschreibung, String zubereitung) {
+	public ReceptModel(String name, String beschreibung, String zubereitung) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.beschreibung = beschreibung;
 		this.zubereitung = zubereitung;
@@ -77,6 +76,13 @@ public class ReceptModel implements java.io.Serializable {
 
 	public void setZubereitung(String zubereitung) {
 		this.zubereitung = zubereitung;
+	}
+	public int getId1() {
+		return id;
+	}
+	 
+	public void setId1(int id) {
+		this.id = id;
 	}
 
 }

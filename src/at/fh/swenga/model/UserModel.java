@@ -1,4 +1,4 @@
-package at.fh.swenga;
+package at.fh.swenga.model;
 
 import java.util.List;
 
@@ -48,22 +48,13 @@ public class UserModel implements java.io.Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserModel(int id, String firstName, String lastName, String userName, String passWord, String userRole) {
+	public UserModel(String firstName, String lastName, String userName, String passWord, String userRole) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.passWord = passWord;
 		this.userRole = userRole;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -104,6 +95,13 @@ public class UserModel implements java.io.Serializable {
 
 	public void setUserRole(String userRole) {
 		this.userRole = userRole;
+	}
+	public int getId() {
+		return id;
+	}
+	 
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

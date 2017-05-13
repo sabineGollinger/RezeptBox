@@ -1,4 +1,4 @@
-package at.fh.swenga;
+package at.fh.swenga.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +19,7 @@ public class CommentModel implements java.io.Serializable {
 
 	@Column(nullable = false, length = 1000)
 	private String text;
-	
+
 	@Version
 	long version;
 
@@ -28,9 +28,16 @@ public class CommentModel implements java.io.Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CommentModel(int id, String text) {
+	public CommentModel(String text) {
 		super();
-		this.id = id;
+		this.text = text;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
 		this.text = text;
 	}
 
@@ -40,14 +47,6 @@ public class CommentModel implements java.io.Serializable {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
 	}
 
 }
