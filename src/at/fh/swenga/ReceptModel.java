@@ -1,0 +1,82 @@
+package at.fh.swenga;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Version;
+
+@Entity
+@Table(name = "Rezepte")
+public class ReceptModel implements java.io.Serializable {
+
+	// Attribute
+	@Id
+	@Column(name = "id_recept")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@Column(nullable = false, length = 45)
+	private String name;
+
+	@Column(nullable = false, length = 500)
+	private String beschreibung;
+
+	@Column(nullable = false, length = 1000)
+	private String zubereitung;
+
+	@Version
+	long version;
+	// Relationships
+	@ManyToOne
+	ReceptModel receptModel;
+
+	public ReceptModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public ReceptModel(int id, String name, String beschreibung, String zubereitung) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.beschreibung = beschreibung;
+		this.zubereitung = zubereitung;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getBeschreibung() {
+		return beschreibung;
+	}
+
+	public void setBeschreibung(String beschreibung) {
+		this.beschreibung = beschreibung;
+	}
+
+	public String getZubereitung() {
+		return zubereitung;
+	}
+
+	public void setZubereitung(String zubereitung) {
+		this.zubereitung = zubereitung;
+	}
+
+}
