@@ -2,6 +2,8 @@ package at.fh.swenga.controller;
 
 import java.util.List;
 
+import javax.xml.stream.events.Comment;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import at.fh.swenga.dao.ReceptDao;
+import at.fh.swenga.model.CommentModel;
 import at.fh.swenga.model.ReceptModel;
 
 @Controller
@@ -29,6 +32,8 @@ public class ReceptController {
 	@RequestMapping("/fillReceptList")
 	@Transactional
 	public String fillData(Model model) {
+		
+		CommentModel comment1 = new CommentModel("hallo");
 
 		ReceptModel p1 = new ReceptModel("Johann", "Blauensteiner", "now");
 		ReceptDao.persist(p1);

@@ -1,10 +1,15 @@
 package at.fh.swenga.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "QuantityUnitModel")
 public class QuantityUnitModel implements java.io.Serializable {
 	
 	@Id
@@ -14,6 +19,22 @@ public class QuantityUnitModel implements java.io.Serializable {
 
 	@Column(nullable = false, length = 45)
 	private String name;
+	
+	//Relationship
+	@OneToOne
+	private IngredientModel ingredient;
+	
+	/*-----------------------------------------------*/
+	
+	public QuantityUnitModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public QuantityUnitModel(String name) {
+		super();
+		this.name = name;
+	}
 
 	public String getName() {
 		return name;
@@ -30,14 +51,13 @@ public class QuantityUnitModel implements java.io.Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public QuantityUnitModel() {
-		super();
-		// TODO Auto-generated constructor stub
+
+	public IngredientModel getIngredient() {
+		return ingredient;
 	}
 
-	public QuantityUnitModel(String name) {
-		super();
-		this.name = name;
+	public void setIngredient(IngredientModel ingredient) {
+		this.ingredient = ingredient;
 	}
 
 }

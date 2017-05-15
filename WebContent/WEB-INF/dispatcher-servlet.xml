@@ -25,7 +25,7 @@
  
  
 	<!-- - POJOs labeled with the @Controller and @Service annotations are auto-detected. -->
-	<context:component-scan base-package="at.fh.swenga.controller" />
+	<context:component-scan base-package="at.fh.swenga" />
  
 	<!-- JSR-303/JSR-349 support will be detected on classpath and enabled automatically -->
 	<mvc:annotation-driven />

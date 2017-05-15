@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <div th:replace="~{includes/bootstrapMeta :: bootstrapMeta}" />
-<title>Employee Manager</title>
+<title>Recept Manager</title>
 <div th:replace="~{includes/bootstrapCSS :: bootstrapCSS}" />
 </head>
 <body>
@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="col-md-2">
-				<a href="fillEmployeeList">
+				<a href="fillReceptList">
 					<button type="button" class="btn btn-success">Fill List</button>
 				</a>
 			</div>
@@ -79,18 +79,18 @@
 							<label class="control-label col-md-2" for="searchType">Search:</label> 
 							<div class="col-md-5">
 								<select name="searchType">
-									<option value="query1" selected="selected">Show all employees</option>							
-									<option value="query2">Filter employees by last name</option>
-									<option value="query3">Filter employees by first name</option>
-									<option value="query4">Filter employees by first name or last name</option>
+									<option value="query1" selected="selected">Show all Recepts</option>							
+									<option value="query2">Filter Recepts by last name</option>
+									<option value="query3">Filter Recepts by first name</option>
+									<option value="query4">Filter Recepts by first name or last name</option>
 									<option value="query5">search with named query</option>
-									<option value="query6">count employees by lastname</option>
-									<option value="query7">delete employees with given lastname</option>
-									<option value="query8">delete all employees from company</option>
-									<option value="query9">list of employees where last name or first name contains a given searchstring</option>
+									<option value="query6">count Recepts by lastname</option>
+									<option value="query7">delete Recepts with given lastname</option>
+									<option value="query8">delete all Recepts from company</option>
+									<option value="query9">list of Recepts where last name or first name contains a given searchstring</option>
 									<option value="query10">order list by last name</option>
-									<option value="query11">Sort all employees by last name ascending (top 10)</option>
-									<option value="query12">sort employees by lastname @ company</option>
+									<option value="query11">Sort all Recepts by last name ascending (top 10)</option>
+									<option value="query12">sort Recepts by lastname @ company</option>
 									<option value="query13">not older than 40 </option>
 									<option value="query14">born between 1980 and 1985</option>
 								</select>
@@ -130,13 +130,13 @@
 					</thead>
 					<tbody>
 						<!--  list all items ----------------------------------------------------------- -->
-						<tr th:each="employee : ${employees}">
-							<td th:text="${employee.id}"></td>
-							<td th:text="${employee.firstName}"></td>
-							<td th:text="${employee.lastName}"></td>
-							<td th:text="${employee.company.name}"></td>
-							<td th:text="${#calendars.format(employee.dayOfBirth,'dd.MM.yyyy')}"></td>
-							<td><a th:href="@{/delete(id=${employee.id})}">Delete</a></td>
+						<tr th:each="Recept : ${Recepts}">
+							<td th:text="${Recept.id}"></td>
+							<td th:text="${Recept.name}"></td>
+							<td th:text="${Recept.beschreibung}"></td>
+							<td th:text="${Recept.zubereitung}"></td>
+							<td th:text="${Recept.CommentModel.text}"></td>
+							<td><a th:href="@{/delete(id=${Recept.id})}">Delete</a></td>
 							
 						</tr>
 						<!--  list all items ----------------------------------------------------------- -->

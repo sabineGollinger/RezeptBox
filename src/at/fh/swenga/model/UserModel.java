@@ -40,8 +40,14 @@ public class UserModel implements java.io.Serializable {
 	long version;
 
 	// Relationship
-	@OneToMany
-	private List<ReceptModel> receptList;
+	@OneToMany(mappedBy="recept")
+	private List<ReceptModel> recept;
+	
+	@OneToMany(mappedBy="comment")
+	private List<CommentModel> comment;
+	
+	@OneToMany(mappedBy="like")
+	private List<LikeModel> like;
 
 	public UserModel() {
 		super();
@@ -102,6 +108,30 @@ public class UserModel implements java.io.Serializable {
 	 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public List<ReceptModel> getRecept() {
+		return recept;
+	}
+
+	public void setRecept(List<ReceptModel> recept) {
+		this.recept = recept;
+	}
+
+	public List<CommentModel> getComment() {
+		return comment;
+	}
+
+	public void setComment(List<CommentModel> comment) {
+		this.comment = comment;
+	}
+
+	public List<LikeModel> getLike() {
+		return like;
+	}
+
+	public void setLike(List<LikeModel> like) {
+		this.like = like;
 	}
 
 }

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -22,7 +23,16 @@ public class CommentModel implements java.io.Serializable {
 
 	@Version
 	long version;
+	/*-------------------------------------------------*/
+	
+	//Relationships
+	@ManyToOne
+	ReceptModel receptModel;
+	
+	@ManyToOne
+	private UserModel user;
 
+	/*-------------------------------------------------*/
 	public CommentModel() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -47,6 +57,22 @@ public class CommentModel implements java.io.Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public ReceptModel getReceptModel() {
+		return receptModel;
+	}
+
+	public void setReceptModel(ReceptModel receptModel) {
+		this.receptModel = receptModel;
+	}
+
+	public UserModel getUser() {
+		return user;
+	}
+
+	public void setUser(UserModel user) {
+		this.user = user;
 	}
 
 }
